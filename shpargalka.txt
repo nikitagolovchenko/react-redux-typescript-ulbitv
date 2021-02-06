@@ -1,0 +1,17 @@
+- npx create-react-app project-name --template typescript
+- npm i redux react-redux redux-thunk axios
+- npm i --save-dev @types/react-redux
+
+Удаляем лишнее и Создаем папки:
+- types - где описываем все типы type 
+- store - взаимодействие с redux (actions, reducers)
+- components - компоненты
+- hooks - где создаем свой хук useSelector
+
+Создаем типизированный хук useSelector:
+- export type RootState = ReturnType<typeof rootReducer>;
+- export const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;
+
+Типизация dispatch:
+- import {Dispatch} from 'redux';
+- return async (dispatch: Dispatch<UserAction>) => {};
